@@ -1,23 +1,24 @@
 import React, { useState } from "react"
 
-export const Login = () => {
+export const Login = (props) => {
     const [email, setEmail ] = useState('');
     const [pass, setPass ] = useState('');
 
-    const handleSubmit = () => {
-        email.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log(email);
     }
+    
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <label for="email">email </label>
+        <div className="auth-form-container">
+            <form className="login-form" onSubmit={handleSubmit}>
+                <label htmlFor="email">email </label>
                 <input value={email} type="email" placeholder="youremail@gmail.com" name="email"/>
-                <label for="password">password </label>
+                <label htmlFor="password">password </label>
                 <input value={pass} type="password" placeholder="*****" name="password" />
                 <button>Log In</button>
             </form>   
-            <button> Already have an account? Register Here </button>
-        </>
-            )
+            <button onClick={() => props.onFormSwitch('register')}>Don't have an account? Register Here </button>
+        </div>
+    )
 }
