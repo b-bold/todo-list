@@ -5,7 +5,7 @@ export const Welcome = () => {
 
     return (
         <>
-            <h2>Hellow World</h2>
+            <h2>Hello World</h2>
         </>
     )
 }
