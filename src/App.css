@@ -26,6 +26,8 @@ label {
   text-align: left; 
   display: inline-block;
   width: 10.75rem;
+  color: rgb(255, 191, 0);
+  font-weight: bold;
 }
 
 input { 
