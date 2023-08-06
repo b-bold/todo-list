@@ -67,7 +67,7 @@ export const Register = (props) => {
                             <input value={name} name="name" id="id" placeholder="full name" onChange={handleInputChange} />
                         
                         {error && email.length <= 0 ? 
-                            <label htmlFor="email">Email </label> : ''}
+                            <label htmlFor="email">Email cannot be empty</label> : ''}
                             <input value={email} type="email" placeholder="youremail@gmail.com" name="email" onChange={handleInputChange} />
                         
                         {error && pass.length <= 0 ? 
@@ -75,7 +75,7 @@ export const Register = (props) => {
                             <input value={pass} type="password" placeholder="*****" name="password" onChange={handleInputChange} />
                         
                         {error && age.length <= 0 ? 
-                            <label htmlFor="age">Age </label> : '' }
+                            <label htmlFor="age">Age cannot be empty</label> : '' }
                             <input value={age} type="age" placeholder="*****" name="age" onChange={handleInputChange} />
                         
                         <button className='login-btn'>Log In</button>
