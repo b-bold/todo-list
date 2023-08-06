@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react"
+import React, { useState } from "react"
 import { Welcome } from './Welcome'
 
 export const Register = (props) => {
@@ -7,11 +7,9 @@ export const Register = (props) => {
     const [name, setName] = useState('');
     const [age, setAge] = useState('')
     const [error, setError] = useState(false);
-    const [page, setPage] = useState(false)
+    const [goToWelcomePage, setGoToWelcomePage] = useState(false)
 
     const handleInputChange = (event) => {
-        // does this code work? yes
-        // does this code seem ugly? also yes.
         if (event.target.name === 'name'){
             setName(event.target.value)
         } 
@@ -46,15 +44,21 @@ export const Register = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
         if (error) {
-            return setPage(false)
+            return setGoToWelcomePage(false)
         } else {
-            setPage(true)
+            setGoToWelcomePage(true)
         }
+    }
+
+    const formSwitch = () => {
+        props.onFormSwitch('login')
     }
 
     return (
         <div>
-            {!page &&
+            {(goToWelcomePage) ?
+                <Welcome />
+            : 
                 <div className="auth-form-container"> 
                     <h2> Register </h2>  
                     <form className="register-form" onSubmit={handleSubmit}>
@@ -76,11 +80,9 @@ export const Register = (props) => {
                         
                         <button className='login-btn'>Log In</button>
                     </form>
-                    <button className='register-btn' onClick={() => props.onFormSwitch('login')}>Login Here </button>
+                    <button className='register-btn' onClick={formSwitch}>Login Here </button>
                 </div>
             }
-
-            {page && <Welcome />}
         </div>
     )
 }
