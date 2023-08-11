@@ -4,10 +4,13 @@ import { Welcome } from './Welcome'
 export const Register = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
-    const [name, setName] = useState('');
-    const [age, setAge] = useState('')
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [age, setAge] = useState('');
+    const [username, setUsername] = useState('');
     const [error, setError] = useState(false);
     const [goToWelcomePage, setGoToWelcomePage] = useState(false)
+
 
     const handleInputChange = (event) => {
         if (event.target.name === 'name'){
@@ -63,11 +66,12 @@ export const Register = (props) => {
     // TODO 1: once user info is saved, i want to hit the API and check the result
     const fetchResponse = async () => {
         const userInfo = {
-        //     "firstName": firstName,
-        //     "lastName": lastName,
-        //     "emaiL": email,
-        //     "username": username,
-        //     "age": age
+            // "firstName": firstName,
+            // "lastName": lastName,
+            // "emaiL": email,
+            // "username": username,
+            // "age": age,
+            // "pass": pass
         }
 
         const result = await fetch('https://dummyjson.com/auth/login', {

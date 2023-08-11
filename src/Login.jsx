@@ -4,8 +4,12 @@ import { Welcome } from './Welcome'
 // import "./Form.css"
 
 export const Login = (props) => {
-    const [email, setEmail ] = useState('');
-    const [pass, setPass ] = useState('');
+    const [email, setEmail] = useState('');
+    const [pass, setPass] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [age, setAge] = useState('');
+    const [username, setUsername] = useState('');
     const [error, setError] = useState(false);
     const [goToWelcomePage, setGoToWelcomePage] = useState(false)
 
