@@ -11,6 +11,10 @@ export const Login = (props) => {
     const [goToWelcomePage, setGoToWelcomePage] = useState(false)
 
     const handleInputChange = (event) => {
+        if (event.target.name === 'username') {
+            setUserName(event.target.value)
+        } 
+        
         if (event.target.name === 'email') {
             setEmail(event.target.value)
         }

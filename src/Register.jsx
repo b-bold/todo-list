@@ -13,8 +13,16 @@ export const Register = (props) => {
 
 
     const handleInputChange = (event) => {
-        if (event.target.name === 'name'){
+        if (event.target.name === 'firstName'){
             setFirstName(event.target.value)
+        } 
+       
+        if (event.target.name === 'lastNname') {
+            setLastName(event.target.value)
+        } 
+       
+        if (event.target.name === 'username') {
+            setUserName(event.target.value)
         } 
         
         if (event.target.name === 'email'){
