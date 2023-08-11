@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import { name } from './Register'
+import React from "react"
 
 export const Welcome = () => {
 

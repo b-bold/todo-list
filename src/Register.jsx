@@ -26,6 +26,7 @@ export const Register = (props) => {
             setAge(event.target.value)
         }
 
+        // BUG: my logic is off here 
         if (name.length === 0) {
             setError(true)
         } else if (pass.length === 0) {
@@ -36,13 +37,56 @@ export const Register = (props) => {
             setError(true)
         } else if (email.length === 0) {
             setError(true)
-        } else {
-            setError(false)
         }
+        
+
+        // if ((name.length === 0 && pass.length === 0 && age.length === 0) && (email.length === 0 && email.length === 0)) {
+        //     setError(false)
+        //     console.log(1)
+        // } else if (name.length === 0) {
+        //     setError(true)
+        //     console.log(2)
+        // } else if (age.length === 0) {
+        //     setError(true)
+        //     console.log(4)
+        // } else if (age.length === 0) {
+        //     setError(true)
+        //     console.log(5)
+        // } else if (email.length === 0) {
+        //     setError(true)
+        //     console.log(6)
+        // }
+
+   
     }
 
+    // TODO 1: once user info is saved, i want to hit the API and check the result
+    const fetchResponse = async () => {
+        const userInfo = {
+        //     "firstName": firstName,
+        //     "lastName": lastName,
+        //     "emaiL": email,
+        //     "username": username,
+        //     "age": age
+        }
+
+        const result = await fetch('https://dummyjson.com/auth/login', {
+            // mode: 'no-cors',
+
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userInfo)
+        })
+
+        const resultInJson = await result.json()
+        console.log(resultInJson)
+    }
+    
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
+        console.log('handleSubmitError:', error)
         if (error) {
             return setGoToWelcomePage(false)
         } else {
