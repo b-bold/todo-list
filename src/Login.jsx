@@ -7,7 +7,6 @@ export const Login = (props) => {
     const [username, setUsername] = useState(''); 
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
-    const [error, setError] = useState(false);
     const [goToWelcomePage, setGoToWelcomePage] = useState(false)
 
     const handleInputChange = (event) => {
@@ -21,12 +20,6 @@ export const Login = (props) => {
 
         if (event.target.name === 'password') {
             setPass(event.target.value)
-        }
-
-        if (email.length === 0 || pass.length === 0) {
-            setError(true)   
-        } else {
-            setError(false)
         }
     }
 
@@ -56,11 +49,7 @@ export const Login = (props) => {
         // i hit the endpoint, get the result and either go to the welcome page or pass the error to the client side. 
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
-        if (error) {
-            return setGoToWelcomePage(false)
-        } else {
-            setGoToWelcomePage(true)
-        }
+        setGoToWelcomePage(true)
     }
 
     const formSwitch = () => {
@@ -75,31 +64,13 @@ export const Login = (props) => {
                 <div className="auth-form-container">
                     <h2> Login </h2>
                     <form className="login-form" onSubmit={handleSubmit}>
-                        {error && email.length <= 0 ? 
-                            <label htmlFor="email"> Email cannot be empty </label> : ''}
-                        <input 
-                            value={email} 
-                            type="email" 
-                            placeholder="enter email" 
-                            name="email" 
-                            onChange={handleInputChange} 
-                        />
-
-                        {error && pass.length <= 0 ? 
-                            <label htmlFor="password">Password cannot be empty </label> : ''}
-                         <input 
-                            value={pass} 
-                            type="password" 
-                            placeholder="enter password" 
-                            name="password" 
-                            onChange={handleInputChange} 
-                         />
-
+                        <input value={username} name="username" required placeholder="username" onChange={handleInputChange} />
+                        <input value={pass} type="text" required placeholder="enter password" name="password" onChange={handleInputChange} />
                         <button className='login-btn' disabled={!email} onClick={fetchResponse}>Log In</button>
                     </form>
-
                     <button className='register-btn' onClick={formSwitch}>Register Here </button>
-                </div>}
+                </div>
+            }
         </div>
     )
 }

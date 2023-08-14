@@ -8,7 +8,6 @@ export const Register = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [age, setAge] = useState('');
-    const [error, setError] = useState(false);
     const [goToWelcomePage, setGoToWelcomePage] = useState(false)
 
 
@@ -17,7 +16,7 @@ export const Register = (props) => {
             setFirstName(event.target.value)
         } 
        
-        if (event.target.name === 'lastNname') {
+        if (event.target.name === 'lastName') {
             setLastName(event.target.value)
         } 
        
@@ -36,39 +35,6 @@ export const Register = (props) => {
         if (event.target.name === 'age'){
             setAge(event.target.value)
         }
-
-        // BUG: my logic is off here 
-        if (firstName.length === 0) {
-            setError(true)
-        } else if (pass.length === 0) {
-            setError(true)
-        } else if (age.length === 0) {
-            setError(true)
-        } else if (age.length === 0) {
-            setError(true)
-        } else if (email.length === 0) {
-            setError(true)
-        }
-        
-
-        // if ((name.length === 0 && pass.length === 0 && age.length === 0) && (email.length === 0 && email.length === 0)) {
-        //     setError(false)
-        //     console.log(1)
-        // } else if (name.length === 0) {
-        //     setError(true)
-        //     console.log(2)
-        // } else if (age.length === 0) {
-        //     setError(true)
-        //     console.log(4)
-        // } else if (age.length === 0) {
-        //     setError(true)
-        //     console.log(5)
-        // } else if (email.length === 0) {
-        //     setError(true)
-        //     console.log(6)
-        // }
-
-   
     }
 
     // TODO 1: once user info is saved, i want to hit the API and check the result
@@ -98,12 +64,7 @@ export const Register = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
-        console.log('handleSubmitError:', error)
-        if (error) {
-            return setGoToWelcomePage(false)
-        } else {
-            setGoToWelcomePage(true)
-        }
+        setGoToWelcomePage(true)
     }
 
     const formSwitch = () => {
@@ -118,25 +79,12 @@ export const Register = (props) => {
                 <div className="auth-form-container"> 
                     <h2> Register </h2>  
                     <form className="register-form" onSubmit={handleSubmit}>
-                        {error && firstName.length <= 0 ? 
-                            <label>First Name cannot be empty</label> : ''}
-                            <input value={firstName} name="firstName" id="id" placeholder="first name" onChange={handleInputChange} />
-                        {error && lastName.length <= 0 ?
-                            <label>Last Name cannot be empty</label> : ''}
-                            <input value={lastName} name="lastName" id="id" placeholder="last name" onChange={handleInputChange} />
-                        {error && username.length <= 0 ?
-                            <label>Username cannot be empty</label> : ''}
-                            <input value={username} name="username" id="id" placeholder="username" onChange={handleInputChange} />
-                        {error && email.length <= 0 ? 
-                            <label htmlFor="email">Email cannot be empty</label> : ''}
-                            <input value={email} type="email" placeholder="youremail@gmail.com" name="email" onChange={handleInputChange} />
-                        {error && pass.length <= 0 ? 
-                            <label htmlFor="password">Password cannot be empty</label> : '' }
-                            <input value={pass} type="password" placeholder="password" name="password" onChange={handleInputChange} />
-                        {error && age.length <= 0 ? 
-                            <label htmlFor="age">Age cannot be empty</label> : '' }
-                            <input value={age} type="age" placeholder="age" name="age" onChange={handleInputChange} />
-                        
+                        <input value={firstName} type="text" required name="firstName" id="1" placeholder="first name" onChange={handleInputChange} />
+                        <input value={lastName} name="lastName" required id="2" placeholder="last name" onChange={handleInputChange} />
+                        <input value={username} name="username" required id="3" placeholder="username" onChange={handleInputChange} />
+                        <input value={email} type="email" required placeholder="youremail@gmail.com" name="email" onChange={handleInputChange} />
+                        <input value={pass} type="password" required placeholder="password" name="password" onChange={handleInputChange} />
+                        <input value={age} type="age" required placeholder="age" name="age" onChange={handleInputChange} />
                         <button className='login-btn'>Log In</button>
                     </form>
                     <button className='register-btn' onClick={formSwitch}>Login Here </button>

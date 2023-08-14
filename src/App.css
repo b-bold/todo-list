@@ -8,6 +8,10 @@
   color: white;
 }
 
+h2 { 
+  margin-top: 0rem;
+}
+
 /* FORM */
 
 .login-form, .auth-form-container, .register-form {
@@ -48,12 +52,13 @@ button {
 
 .login-btn {
   width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 .register-btn{
   background: none;
   color: rgb(251, 223, 239);
   text-decoration: underline;
-  padding: 1.25rem;
+  
 }
 
