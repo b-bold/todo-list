@@ -22,7 +22,7 @@ export const Register = (props) => {
         } 
        
         if (event.target.name === 'username') {
-            setUserName(event.target.value)
+            setUsername(event.target.value)
         } 
         
         if (event.target.name === 'email'){

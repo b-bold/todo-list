@@ -12,7 +12,7 @@ export const Login = (props) => {
 
     const handleInputChange = (event) => {
         if (event.target.name === 'username') {
-            setUserName(event.target.value)
+            setUsername(event.target.value)
         } 
         
         if (event.target.name === 'email') {
@@ -95,7 +95,7 @@ export const Login = (props) => {
                             onChange={handleInputChange} 
                          />
 
-                        <button className='login-btn' onClick={fetchResponse}>Log In</button>
+                        <button className='login-btn' disabled={!email} onClick={fetchResponse}>Log In</button>
                     </form>
 
                     <button className='register-btn' onClick={formSwitch}>Register Here </button>
