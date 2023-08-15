@@ -1,26 +1,30 @@
 import React, { useState, Popup } from "react"
 import { Login } from '../../Login'
 
-export const TodoForm = () => {
-   const [input, setInput] = useState('')
+export const TodoForm = (props) => {
+    const [input, setInput] = useState('')
     const [goLoginPage, setGoLoginPage] = useState(false)
+    const [priority, setPriority] = useState('high')
 
-   const handleSubmit = (e) => {
+
+    const handleInputChange = (event) => {
+        setInput(event.target.value)
+    }
+   
+    const handleCancel = (e) => {
         e.preventDefault();
        console.log('this will take you back to the login page for now');
        setGoLoginPage(true)
-        //TODO: create a new todo 
    }
-
-    const handleInputChange = (event) => {
-        if (event.target.name === 'input') {
-            setInput(event.target.value)
-        } 
-    }
 
     const handleAddTodo = (event) => {
         event.preventDefault();
-        console.log('In the future, this will create a new todo and render a new component reflecting that')
+        props.onSubmit({
+            id: Math.floor(Math.random() * 1000),
+            text: input,
+            priority: priority
+        })
+        setInput('')
     }
 
 
@@ -43,7 +47,7 @@ export const TodoForm = () => {
                 />
                 <div className='todo-button-container'>
                     <button className='todo-button' onClick={handleAddTodo} >Add Todo</button>
-                    <button className='todo-cancel-button'onClick={handleSubmit}>Cancel</button>
+                    <button className='todo-cancel-button'onClick={handleCancel}>Cancel</button>
                 </div>
             </form>
             }
