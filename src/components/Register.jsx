@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Welcome } from './Welcome'
+import { TodoForm } from './Todo/TodoForm/TodoForm'
 
 export const Register = (props) => {
     const [firstName, setFirstName] = useState('');
@@ -75,7 +75,7 @@ export const Register = (props) => {
     return (
         <div>
             {(goTodoPage) ?
-                <Welcome />
+                <TodoForm />
             : 
                 <div className="auth-form-container"> 
                     <h2> Register </h2>  
