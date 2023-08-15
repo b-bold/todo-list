@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Welcome } from './Welcome'
+import { Welcome } from '../Welcome'
 
 export const Register = (props) => {
     const [firstName, setFirstName] = useState('');
