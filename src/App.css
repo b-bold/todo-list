@@ -1,5 +1,4 @@
 .App {
-  /* text-align: center; */
   display: flex;
   min-height: 100vh;
   align-items: center;
@@ -14,12 +13,12 @@ h2 {
 
 /* FORM */
 
-.login-form, .auth-form-container, .register-form {
+.login-form, .auth-form-container, .register-form, .todo-form-container {
   display: flex; 
   flex-direction: column;
 }
 
-.auth-form-container {
+.auth-form-container, .todo-form-container {
   padding: 2rem 3rem;
   border: 0.1rem solid white;
   border-radius: 0.25rem;
@@ -41,7 +40,7 @@ input {
   border-radius: 5px;
 }
 
-button {
+button, .todo-button {
   border: none;
   background-color: white;
   padding: 5px;
@@ -53,6 +52,18 @@ button {
 .login-btn {
   width: 100%;
   margin-bottom: 0.5rem;
+}
+
+.todo-button, .todo-cancel-button {
+  padding: 0.5rem;
+}
+
+.todo-button {
+  margin-right: 0.25rem;
+}
+
+.todo-cancel-button {
+  margin-left: 2.5rem;
 }
 
 .register-btn{

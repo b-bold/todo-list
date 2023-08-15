@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Welcome } from '../Welcome'
+import { Welcome } from './Welcome'
 
 export const Register = (props) => {
     const [firstName, setFirstName] = useState('');
@@ -8,7 +8,8 @@ export const Register = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [age, setAge] = useState('');
-    const [goToWelcomePage, setGoToWelcomePage] = useState(false)
+    const [goTodoPage, setGoTodoPage] = useState(false)
+
 
 
     const handleInputChange = (event) => {
@@ -64,7 +65,7 @@ export const Register = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
-        setGoToWelcomePage(true)
+        setGoTodoPage(true)
     }
 
     const formSwitch = () => {
@@ -73,7 +74,7 @@ export const Register = (props) => {
 
     return (
         <div>
-            {(goToWelcomePage) ?
+            {(goTodoPage) ?
                 <Welcome />
             : 
                 <div className="auth-form-container"> 

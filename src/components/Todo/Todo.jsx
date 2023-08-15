@@ -1,10 +1,10 @@
 import React from "react"
 
-export const Welcome = () => {
+export const Todo = () => {
 
     return (
         <>
-            <h2>Hello World</h2>
+            <h2>ToDo Components</h2>
         </>
     )
 }
