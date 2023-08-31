@@ -40,7 +40,11 @@ input {
   border-radius: 5px;
 }
 
-button, .todo-button {
+.todo-input {
+  margin-right: 0.5rem;
+}
+
+button {
   border: none;
   background-color: white;
   padding: 5px;

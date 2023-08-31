@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { TodoList } from "./Todo/TodoList";
+import TodoList from "./Todo/TodoList";
 
 export const Register = (props) => {
     const [firstName, setFirstName] = useState('');
@@ -38,7 +38,8 @@ export const Register = (props) => {
         }
     }
 
-    // TODO 1: once user info is saved, i want to hit the API and check the result
+    // TODO: once user info is saved, 
+    // i want to hit the API and check the result
     const fetchResponse = async () => {
         const userInfo = {
             // "firstName": firstName,

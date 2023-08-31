@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { TodoList } from "./Todo/TodoList";
+import TodoList from "./Todo/TodoList"
+import Todo from "./Todo/Todo"
 
 export const Login = (props) => {
     const [username, setUsername] = useState(''); 
@@ -16,7 +17,9 @@ export const Login = (props) => {
         }
     }
 
-    // TODO 3: once user info is saved, i want to hit the API and check the result
+    // TODO: once user info is saved, 
+    // i want to hit the API and check the result 
+    // currently getting 400 code
     const fetchResponse = async () => {
         const userInfo = {
             "username": username,
@@ -24,7 +27,6 @@ export const Login = (props) => {
         }
         
         const result = await fetch('https://dummyjson.com/auth/login', {
-            // mode: 'no-cors',
             
             method: 'POST',
             headers: {
@@ -37,9 +39,9 @@ export const Login = (props) => {
         console.log(resultInJson)
     }     
 
-    // TODO 2: test that a user can login by changing code here. 
+    // TODO: test that a user can login by changing code here. 
         // change code so that once the email and password are saved and you press login,
-        // i hit the endpoint, get the result and either go to the welcome page or pass the error to the client side. 
+        // i hit the endpoint, get the result and either go to the todolist form or pass the error to the client side. 
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
         setGoTodoPage(true)

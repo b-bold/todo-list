@@ -4,7 +4,9 @@ import { Register } from "./components/Register"
 import React, { useState } from 'react'
 import { TodoList } from './components/Todo/TodoList';
 
+// parent component
 function App() {
+  // variable to set which form should be shown
   const [currentForm, setCurrentForm] = useState('login')
   
   const toggleForm = (formName) => {
