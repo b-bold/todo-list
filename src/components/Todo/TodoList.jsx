@@ -31,18 +31,17 @@ function TodoList() {
     );
 
     const addTodo = todo => {
-        if (!todo.text || /^\s*$/.test(todo.text)) {
+        if (!todo.title || /^\s*$/.test(todo.title)) {
             return;
         }
 
         const newTodos = [todo, ...todos];
 
         setTodos(newTodos);
-        console.log(...todos);
-    };
+    }; 
 
     const updateTodo = (todoId, newValue) => {
-        if (!newValue.text || /^\s*$/.test(newValue.text)) {
+        if (!newValue.title || /^\s*$/.test(newValue.title)) {
             return;
         }
 

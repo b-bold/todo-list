@@ -5,7 +5,7 @@ import Todo from "./Todo/Todo"
 export const Login = (props) => {
     const [username, setUsername] = useState(''); 
     const [pass, setPass] = useState('');
-    const [goTodoPage, setGoTodoPage] = useState(false)
+    const [goTodoListPage, setGoTodoListPage] = useState(false)
 
     const handleInputChange = (event) => {
         if (event.target.name === 'username') {
@@ -36,7 +36,7 @@ export const Login = (props) => {
         })
     
         const resultInJson = await result.json()
-        console.log(resultInJson)
+        console.log(resultInJson) // for later use
     }     
 
     // TODO: test that a user can login by changing code here. 
@@ -44,7 +44,7 @@ export const Login = (props) => {
         // i hit the endpoint, get the result and either go to the todolist form or pass the error to the client side. 
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
-        setGoTodoPage(true)
+        setGoTodoListPage(true)
     }
 
     const formSwitch = () => {
@@ -53,7 +53,7 @@ export const Login = (props) => {
     
     return (
         <div>
-            {(goTodoPage) ? 
+            {(goTodoListPage) ? 
                 <TodoList /> 
         : 
                 <div className="auth-form-container">
@@ -63,7 +63,7 @@ export const Login = (props) => {
                         <input value={pass} type="password" required placeholder="enter password" name="password" onChange={handleInputChange} />
                         <button className='login-btn' onClick={fetchResponse}>Log In</button>
                     </form>
-                    <button className='register-btn' onClick={formSwitch}>Register Here </button>
+                    <button className='register-btn' onClick={formSwitch}>Register Here</button>
                 </div>
             }
         </div>

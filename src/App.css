@@ -11,8 +11,6 @@ h2 {
   margin-top: 0rem;
 }
 
-/* FORM */
-
 .login-form, .auth-form-container, .register-form, .todo-form-container {
   display: flex; 
   flex-direction: column;
