@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import TodoList from "./Todo/TodoList"
-import Todo from "./Todo/Todo"
 
 export const Login = (props) => {
     const [username, setUsername] = useState(''); 

@@ -8,7 +8,7 @@ export const Register = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [age, setAge] = useState('');
-    const [goTodoPage, setGoTodoPage] = useState(false)
+    const [goTodoListPage, setGoTodoListPage] = useState(false)
 
 
 
@@ -66,7 +66,7 @@ export const Register = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
-        setGoTodoPage(true)
+        setGoTodoListPage(true)
     }
 
     const formSwitch = () => {
@@ -75,18 +75,18 @@ export const Register = (props) => {
 
     return (
         <div>
-            {(goTodoPage) ?
+            {(goTodoListPage) ?
                 <TodoList />
             : 
                 <div className="auth-form-container"> 
                     <h2> Register </h2>  
                     <form className="register-form" onSubmit={handleSubmit}>
-                        <input value={firstName} type="text" required name="firstName" id="1" placeholder="first name" onChange={handleInputChange} />
-                        <input value={lastName} name="lastName" required id="2" placeholder="last name" onChange={handleInputChange} />
-                        <input value={username} name="username" required id="3" placeholder="username" onChange={handleInputChange} />
-                        <input value={email} type="email" required placeholder="youremail@gmail.com" name="email" onChange={handleInputChange} />
-                        <input value={pass} type="password" required placeholder="password" name="password" onChange={handleInputChange} />
-                        <input value={age} type="age" required placeholder="age" name="age" onChange={handleInputChange} />
+                        <input value={firstName} required name="firstName" type="text" id="1" placeholder="first name" onChange={handleInputChange} />
+                        <input value={lastName} required name="lastName" id="2" placeholder="last name" onChange={handleInputChange} />
+                        <input value={username} required name="username" id="3" placeholder="username" onChange={handleInputChange} />
+                        <input value={email} required name="email" type="email" placeholder="youremail@gmail.com"  onChange={handleInputChange} />
+                        <input value={pass} required name="password" type="password" placeholder="password" onChange={handleInputChange} />
+                        <input value={age} required name="age" type="age" placeholder="age" onChange={handleInputChange} />
                         <button className='login-btn'>Log In</button>
                     </form>
                     <button className='register-btn' onClick={formSwitch}>Login Here </button>
