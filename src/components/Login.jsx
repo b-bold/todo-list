@@ -21,8 +21,8 @@ export const Login = (props) => {
     // currently getting 400 code
     const fetchResponse = async () => {
         const userInfo = {
-            "username": username,
-            "password": pass
+            "username": 'kminchelle', // in future will be username variable
+            "password": '0lelplR' // in the future will be pass variable
         }
         
         const result = await fetch('https://dummyjson.com/auth/login', {

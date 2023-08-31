@@ -42,15 +42,15 @@ export const Register = (props) => {
     // i want to hit the API and check the result
     const fetchResponse = async () => {
         const userInfo = {
-            // "firstName": firstName,
-            // "lastName": lastName,
-            // "emaiL": email,
-            // "username": username,
-            // "age": age,
-            // "pass": pass
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email,
+            "username": username,
+            "age": age,
+            "pass": pass
         }
 
-        const result = await fetch('https://dummyjson.com/auth/login', {
+        const result = await fetch('https://dummyjson.com/users/add', {
             // mode: 'no-cors',
 
             method: 'POST',
@@ -87,7 +87,7 @@ export const Register = (props) => {
                         <input value={email} required name="email" type="email" placeholder="youremail@gmail.com"  onChange={handleInputChange} />
                         <input value={pass} required name="password" type="password" placeholder="password" onChange={handleInputChange} />
                         <input value={age} required name="age" type="age" placeholder="age" onChange={handleInputChange} />
-                        <button className='login-btn'>Log In</button>
+                        <button className='login-btn' onClick={fetchResponse}>Log In</button>
                     </form>
                     <button className='register-btn' onClick={formSwitch}>Login Here </button>
                 </div>
