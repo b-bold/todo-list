@@ -29,7 +29,7 @@ export const TodoForm = (props) => {
                 name="text"
                 onChange={handleChange}
             />
-            <button className="todo-button">Add To Do</button>
+                <button className="todo-button">Add Todo</button>
         </form>
         
     )
