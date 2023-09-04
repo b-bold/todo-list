@@ -49,6 +49,7 @@ input {
 
 .todo-input {
   margin-right: 0.5rem;
+  width: 61%;
 }
 
 .todo-input::placeholder {
@@ -61,10 +62,9 @@ input {
   align-items: center;
   margin: 4px auto;
   color: #fff;
-  background: linear-gradient(90deg,
+  background: linear-gradient(45deg,
       rgb(71, 20, 255) 0%,
       rgb(140, 17, 255) 100%);
-
   padding: 16px;
   border-radius: 5px;
   width: 90%;
@@ -105,6 +105,8 @@ button {
 
 .todo-button {
   margin-right: 0.25rem;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .todo-cancel-button {
