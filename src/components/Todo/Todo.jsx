@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 import TodoForm from './TodoForm/TodoForm';
+import { ProgressBar } from '../ProgressBar';
 
 export const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     const [edit, setEdit] = useState({
@@ -49,6 +50,7 @@ export const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
             <div key={todo.id} onClick={() => completeTodo(todo.id)}>
                 {todo.title}
             </div>
+            <ProgressBar/>
             <div className='icons'>
                 <RiCloseCircleLine
                     onClick={() => removeTodo(todo.id)}
