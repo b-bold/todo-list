@@ -6,7 +6,7 @@ function TodoList() {
     const [todos, setTodos] = useState(
         [
             {
-                id: 0,
+                id: 1,
                 title: 'Learn React',
                 priority: 'high',
                 timeSensitive: true,
@@ -17,7 +17,7 @@ function TodoList() {
                 inProgress: false
             },
             {
-                id: 1,
+                id: 5,
                 title: 'Find Cardi Quote About the Cold',
                 priority: 'medium',
                 timeSensitive: false,
