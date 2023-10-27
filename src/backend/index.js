@@ -1,3 +1,4 @@
+
 const express = require("express")
 const app = express()
 const port = 3000
@@ -5,14 +6,15 @@ const port = 3000
 const todos = [
     {
         id: 1,
-        desc: 'write python code',
+        desc: "write python code",
         completed: true
     },
     {
         id: 2,
-        desc: 'write javascript code',
+        desc: "write ruby code",
         completed: true
-    },
+
+    }
 ];
 
 app.get('/', (req, res, next) => {
@@ -22,6 +24,21 @@ app.get('/', (req, res, next) => {
 app.get('/todos', (req, res) => {
     res.json(todos);
 })
+
+app.get('/todos/:id', (req, res) => {
+    console.log(req.params.id);
+    let todo = todos.filter((todo) => todo.id == req.params.id);
+    res.json(todo);
+})
+
+// app.post('todos/:id', (req, res) => {
+//     let.push 
+//     res.json([]);
+// })
+
+// app.delete('todos/:id', (req, res) => {
+//     res.json([]);
+// })
 
 app.listen(port, () => {
     console.log('app is listening in Port:', port);
