@@ -1,7 +1,9 @@
 
 const express = require("express")
 const app = express()
-const port = 3000
+const bodyParser = require("body-parser")
+const port = process.env.port || 3000
+app.use(bodyParser.json())
 
 const todos = [
     {
