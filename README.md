@@ -1,4 +1,18 @@
-This is a Todo List Single Page Application. Technologies used include React and Boostrap. 
+This is a Todo List Single Page Application. Technologies used include React and CSS. 
+
+There are 3 child components: 
+- Login (username and password field must be filled to 'login')
+- Register (must fill all fields to 'create a new user' then can 'login')
+- Todo (this is a form to create a new Todo List Item)
+
+![Login Form](<Screen Shot 2023-08-15 at 1.24.49 PM.png>)
+![Register Form](<Screen Shot 2023-08-15 at 1.26.13 PM.png>)
+![Todo Form](<Screen Shot 2023-08-15 at 1.26.47 PM.png>)
+
+Known Bugs: 
+- Create a Todo Form has no functionality
+- Login Form validations not popping up for some reason
+- Register and Login Forms not successfully hitting the API 
 
 ## Available Scripts
 
